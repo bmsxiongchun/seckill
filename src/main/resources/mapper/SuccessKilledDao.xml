@@ -4,7 +4,7 @@
 
     <insert id="insertSuccessKilled">
         <!-- 当主键冲突时（即重复秒杀时），会报错；不想程序报错，加入ignore -->
-        insert ignore into success_killed(seckill-id, user_phone, state) values (#{seckillId}, #{userPhone}, 0)
+        insert ignore into success_killed(seckill_id, user_phone, state) values (#{seckillId}, #{userPhone}, 0)
     </insert>
 
     <select id="queryByIdWithSeckill" resultType="com.xiong.entity.SuccessKilled">

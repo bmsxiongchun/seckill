@@ -14,7 +14,7 @@ public interface SeckillDao {
      * @param killTime 秒杀时间
      * @return 如果影响行数>1,表示更新库存的记录行数
      */
-    int reduceNumber(long seckillId, Date killTime);
+    int reduceNumber(@Param("seckillId") long seckillId, @Param("killTime") Date killTime);
 
     /**
      * 根据id查询秒杀的商品信息
@@ -25,9 +25,9 @@ public interface SeckillDao {
 
     /**
      * 根据偏移量查询秒杀商品列表
-     * @param offset
-     * @param limit
-     * @return
+     * @param offset 开始
+     * @param limit 结束
+     * @return 返回商品列表
      */
     List<Seckill> queryAll(@Param("offset") int offset, @Param("limit") int limit);
 }
