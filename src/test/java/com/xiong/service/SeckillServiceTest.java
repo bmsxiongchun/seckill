@@ -56,8 +56,10 @@ public class SeckillServiceTest {
 
             System.out.println(seckillExecution);
         } catch (RepeatKillException ex) {
+            logger.error(ex.getMessage());
             ex.printStackTrace();
         } catch (SeckillCloseException ex) {
+            logger.error(ex.getMessage());
             ex.printStackTrace();
         }
     }
@@ -78,8 +80,10 @@ public class SeckillServiceTest {
 
                 System.out.println(seckillExecution);
             } catch (RepeatKillException e) {
+                logger.error(e.getMessage());
                 e.printStackTrace();
             } catch (SeckillCloseException e1) {
+                logger.error(e1.getMessage());
                 e1.printStackTrace();
             }
         } else {
